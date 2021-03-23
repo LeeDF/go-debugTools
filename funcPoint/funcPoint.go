@@ -1,4 +1,4 @@
-package go_debugTools
+package funcPoint
 
 import (
 	"container/list"
