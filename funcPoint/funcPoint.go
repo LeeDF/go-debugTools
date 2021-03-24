@@ -47,7 +47,7 @@ func (t *FuncPoint) Keep() {
 func (t *FuncPoint) String() string {
 	ans := strings.Builder{}
 	ans.WriteString(t.Label + "\n")
-	for p := t.List.Front(); p != t.List.Back(); p = p.Next() {
+	for p := t.List.Front(); p != nil; p = p.Next() {
 		s := p.Value.(point)
 		ans.WriteString(fmt.Sprintf("  [%s] file: %s:%d func:%s consume:%d ns \n", s.Time.Format("2006-01-02 15:04:05"), s.File, s.Line, s.FuncName, s.TimeConsume.Nanoseconds()))
 	}
